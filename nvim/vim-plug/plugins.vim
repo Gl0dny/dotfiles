@@ -15,8 +15,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Themes
-    Plug 'joshdick/onedark.vim'
+    Plug 'wadackel/vim-dogrun'
+    " Stable version of coc
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Status Line
+    Plug 'itchyny/lightline.vim'
+
 
 call plug#end()
 
-
+" Automatically install missing plugins on startup
+  autocmd VimEnter *
+    \ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    \|   PlugInstall --sync | q
+    \| endif
+  
