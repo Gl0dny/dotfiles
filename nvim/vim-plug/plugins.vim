@@ -21,7 +21,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Status Line
     Plug 'itchyny/lightline.vim'
     " Colorizer - lua
-    Plug 'norcalli/nvim-colorizer.lua'
+    "Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
 

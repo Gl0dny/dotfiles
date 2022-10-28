@@ -7,4 +7,3 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/themes/lightline.vim
 " Source the plugins in Lua
 "luafile $HOME/.config/nvim/lua/plug-colorizer.lua
-
