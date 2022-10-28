@@ -20,6 +20,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Status Line
     Plug 'itchyny/lightline.vim'
+    " Rainbow parantheses
+    Plug 'junegunn/rainbow_parentheses.vim'
+
     " Colorizer - lua
     "Plug 'norcalli/nvim-colorizer.lua'
 
