@@ -33,8 +33,13 @@ nnoremap <C-c> <Esc>
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Better tabbing
-vnoremap < <gv
-vnoremap > >gv
+"vnoremap < <gv
+"vnoremap > >gv
+vnoremap <TAB> >gv
+vnoremap <S-TAB> <gv
+
+" Better undoing
+nnoremap <C-z> :undo<CR>
 
 " Better window navigation
 nnoremap <C-h> <C-w>h

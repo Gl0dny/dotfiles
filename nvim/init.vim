@@ -15,7 +15,7 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 
 if exists("g:neovide")
     " Put anything you want to happen only in Neovide here 
-    set guifont=Noto_Sans_Adlam:h7
+    set guifont=Hack:h7
 
     let g:neovide_scale_factor=1
     function! ChangeScaleFactor(delta)
@@ -25,3 +25,5 @@ if exists("g:neovide")
     nnoremap <expr><C--> ChangeScaleFactor(1/1.25)
 
 endif
+
+

@@ -29,7 +29,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Ranger
     "Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 
-
     " Colorizer - lua
     "Plug 'norcalli/nvim-colorizer.lua'
 
