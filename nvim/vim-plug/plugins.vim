@@ -22,6 +22,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'itchyny/lightline.vim'
     " Rainbow parantheses
     Plug 'junegunn/rainbow_parentheses.vim'
+    " Fzf
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'airblade/vim-rooter'
 
     " Colorizer - lua
     "Plug 'norcalli/nvim-colorizer.lua'
