@@ -11,7 +11,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     " File Explorer
-    Plug 'scrooloose/NERDTree'
+    "Plug 'scrooloose/NERDTree'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Themes
@@ -23,9 +23,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Rainbow parantheses
     Plug 'junegunn/rainbow_parentheses.vim'
     " Fzf
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    Plug 'airblade/vim-rooter'
+     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+     Plug 'junegunn/fzf.vim'
+     Plug 'airblade/vim-rooter'
+    " Ranger
+    "Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+
 
     " Colorizer - lua
     "Plug 'norcalli/nvim-colorizer.lua'

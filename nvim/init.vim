@@ -7,5 +7,7 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/themes/lightline.vim
 source $HOME/.config/nvim/plug-config/rainbow_parantheses.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
+"source $HOME/.config/nvim/plug-config/rnvimr.vim
+
 " Source the plugins in Lua
 "luafile $HOME/.config/nvim/lua/plug-colorizer.lua
