@@ -9,5 +9,19 @@ source $HOME/.config/nvim/plug-config/rainbow_parantheses.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 "source $HOME/.config/nvim/plug-config/rnvimr.vim
 
+
 " Source the plugins in Lua
 "luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+
+if exists("g:neovide")
+    " Put anything you want to happen only in Neovide here 
+    set guifont=Noto_Sans_Adlam:h7
+
+    let g:neovide_scale_factor=1
+    function! ChangeScaleFactor(delta)
+        let g:neovide_scale_factor = g:neovide_scale_factor * a:delta
+    endfunction
+    nnoremap <expr><C-=> ChangeScaleFactor(1.25)
+    nnoremap <expr><C--> ChangeScaleFactor(1/1.25)
+
+endif
