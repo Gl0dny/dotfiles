@@ -32,10 +32,10 @@ vim.opt.signcolumn = "yes"                      -- always show the sign column, 
 vim.opt.wrap = false                            -- display lines as one long line
 vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
-vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
+vim.opt.guifont = "monospace:h7"                -- the font used in graphical neovim applications
 
 vim.opt.shortmess:append "c"
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
+vim.cmd "set whichwrap+=<,>,[,],h,l"                        -- line wrapping
+vim.cmd [[set iskeyword+=-]]                                -- making some weird words keywords
 vim.cmd [[autocmd FileType * set formatoptions -=cro]]      -- no more comments in the next line
