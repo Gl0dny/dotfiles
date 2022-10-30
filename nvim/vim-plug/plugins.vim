@@ -28,6 +28,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
      Plug 'airblade/vim-rooter'
     " Ranger
     "Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+    " Git
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'junegunn/gv.vim'
 
     " Colorizer - lua
     "Plug 'norcalli/nvim-colorizer.lua'

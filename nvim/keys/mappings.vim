@@ -41,6 +41,9 @@ vnoremap <S-TAB> <gv
 " Better undoing
 nnoremap <C-z> :undo<CR>
 
+" Git - signify.vim
+nnoremap <leader>gh :SignifyToggleHighlight<CR>
+
 " Better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
