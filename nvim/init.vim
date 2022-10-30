@@ -8,11 +8,11 @@ source $HOME/.config/nvim/themes/lightline.vim
 source $HOME/.config/nvim/plug-config/rainbow_parantheses.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/signify.vim
-"source $HOME/.config/nvim/plug-config/rnvimr.vim
+source $HOME/.config/nvim/plug-config/rnvimr.vim
 
 
 " Source the plugins in Lua
-"luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 
 if exists("g:neovide")
     " Put anything you want to happen only in Neovide here 

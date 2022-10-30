@@ -15,8 +15,19 @@ nmap <leader>gk <plug>(signify-prev-hunk)
 nmap <leader>gJ 9999<leader>gJ
 nmap <leader>gK 9999<leader>gk
 
+" ToogleHighlight
+nnoremap <leader>gh :SignifyToggleHighlight<CR>
 
 " If you like colors instead
 " highlight SignifySignAdd                  ctermbg=green                guibg=#00ff00
 " highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
 " highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00
+
+  "  highlight SignifySignAdd    ctermfg=green  ctermbg=green  guifg=#FFAF0F guibg=0  cterm=NONE gui=NONE
+  "  highlight SignifySignDelete ctermfg=red    ctermbg=red    guifg=7 guibg=0 cterm=NONE gui=NONE
+  "  highlight SignifySignChange ctermbg=yellow guibg=#af00ff cterm=NONE gui=NONE
+
+    highlight link SignifySignAdd             DiffChange
+    highlight link SignifySignChange          DiffAdd
+    highlight link SignifyLineAdd             DiffChange
+    highlight link SignifyLineChange          DiffAdd
