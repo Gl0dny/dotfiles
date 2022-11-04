@@ -46,6 +46,10 @@ keymap("n", "<C-l>", ":vertical resize +2<CR>", opts)
 keymap("n", "<TAB>", ":bnext<CR>", opts)
 keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
 
+-- Easy Caps 
+keymap("n", "<C-u>", "<ESC>viwUi", opts)
+keymap("n", "<C-u>", "viwU<ESC>", opts)
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "<C-c>", "<ESC>", opts)
