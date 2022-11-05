@@ -206,17 +206,16 @@ ex ()
 
 neofetch
 
-#neovim
+#neovim & neovide
+alias v='neovide'
 alias vim='nvim'
+alias vide='neovide'
 
 #tokei
 alias tokei="tokei -f"
 
 #procs
 alias ps="procs"
-
-#neovide
-alias vide='neovide'
 
 #batgrep
 alias grep="batgrep"
@@ -228,3 +227,6 @@ alias f="fzf"
 alias plang="tokei"
 
 . "$HOME/.cargo/env"
+
+#Editor
+export EDITOR='/usr/bin/neovide'

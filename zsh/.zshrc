@@ -291,18 +291,16 @@ ex ()
   fi
 }
 
-#neovim
-alias v='nvim'
+#neovim & neovide
+alias v='neovide'
 alias vim='nvim'
+alias vide='neovide'
 
 #tokei
 alias tokei="tokei -f"
 
 #procs
 alias ps="procs"
-
-#neovide
-alias vide='neovide'
 
 #batgrep
 alias grep="batgrep"
@@ -329,3 +327,10 @@ alias c="clear"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#Editor
+export EDITOR='/usr/bin/neovide'
+
+#Rust stuff
+. "$HOME/.cargo/env"
+
