@@ -207,7 +207,7 @@ ex ()
 neofetch
 
 #neovim & neovide
-alias v='neovim'
+alias v='nvim'
 alias vim='nvim'
 alias vide='neovide'
 
