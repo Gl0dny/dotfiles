@@ -22,9 +22,11 @@ vim.g.maplocalleader = " "
 keymap("", "<C-a>", "ggVG", opts)
 -- Normal --
 -- Exiting nvim
-keymap("", "<C-s>", ":w<cr>", opts)
-keymap("", "<C-q>", ":wq<cr>", opts)
-keymap("", "<A-q>", ":q!<cr>", opts)
+keymap("n", "<C-s>", ":w<cr>", opts)
+keymap("n", "<C-q>", ":wq<cr>", opts)
+keymap("n", "<A-q>", ":q!<cr>", opts)
+-- Closing buffers ( with bufferline plugin )
+keymap("n", "<C-b>", ":Bdelete!<cr>", opts)
 -- Undo --
 keymap("", "<C-z>", ":undo<cr>",opts)
 -- Better window navigation
@@ -36,6 +38,8 @@ keymap("n", "<C-Right>", "<C-w>l", opts)
 -- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>v", ":vsplit<cr>", opts)
+keymap("n", "<leader>h", ":split<cr>", opts)
+keymap("n", "<leader>t", ":tabnew %<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-j>", ":resize +2<CR>", opts)
@@ -78,4 +82,4 @@ keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy())<cr>", opts)
-keymap("n", "<leader>t", "<cmd>lua require'telescope.builtin'.live_grep(require('telescope.themes').get_ivy())<cr>", opts)
+keymap("n", "<leader>r", "<cmd>lua require'telescope.builtin'.live_grep(require('telescope.themes').get_ivy())<cr>", opts)
