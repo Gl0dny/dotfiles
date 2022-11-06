@@ -230,3 +230,6 @@ alias plang="tokei"
 
 #Editor
 export EDITOR='/usr/bin/neovide'
+
+#export for pip3
+export PATH="/home/gl0dny/.local/bin:$PATH"

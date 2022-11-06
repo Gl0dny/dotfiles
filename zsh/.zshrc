@@ -334,3 +334,5 @@ export EDITOR='/usr/bin/neovide'
 #Rust stuff
 . "$HOME/.cargo/env"
 
+#export for pip3
+export PATH="/home/gl0dny/.local/bin:$PATH"
