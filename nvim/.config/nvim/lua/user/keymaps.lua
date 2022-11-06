@@ -87,7 +87,7 @@ keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 -- Telescope
 --keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy())<cr>", opts)
 --keymap("n", "<leader>r", "<cmd>lua require'telescope.builtin'.live_grep(require('telescope.themes').get_ivy())<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files({hidden=true})<cr>", opts)
 keymap("n", "<leader>r", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts)
 keymap("n", "<leader>gs", "<cmd>lua require'telescope.builtin'.git_status()<cr>",opts)
 keymap("n", "<leader>gc", "<cmd>lua require'telescope.builtin'.git_commits()<cr>",opts)
