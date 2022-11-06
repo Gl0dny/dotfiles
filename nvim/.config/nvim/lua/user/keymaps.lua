@@ -41,7 +41,7 @@ keymap("n", "<leader>v", ":vsplit<cr>", opts)
 keymap("n", "<leader>h", ":split<cr>", opts)
 keymap("n", "<leader>t", ":tabnew %<cr>", opts)
 
--- Resize with arrows
+-- Resize
 keymap("n", "<C-j>", ":resize +2<CR>", opts)
 keymap("n", "<C-k>", ":resize -2<CR>", opts)
 keymap("n", "<C-h>", ":vertical resize -2<CR>", opts)
