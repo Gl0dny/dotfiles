@@ -19,16 +19,25 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- General --
+-- Ctrl + A
 keymap("", "<C-a>", "ggVG", opts)
+
+-- Undo
+keymap("", "<C-z>", ":undo<cr>", opts)
+
+-- Copy & Paste
+keymap("", "<C-S-v>", '"*p', opts)
+keymap("", "<C-S-c>", '"*y', opts)
+
 -- Normal --
 -- Exiting nvim
 keymap("n", "<C-s>", ":w<cr>", opts)
 keymap("n", "<C-q>", ":wq<cr>", opts)
 keymap("n", "<A-q>", ":q!<cr>", opts)
+
 -- Closing buffers ( with bufferline plugin )
 keymap("n", "<C-b>", ":Bdelete!<cr>", opts)
--- Undo --
-keymap("", "<C-z>", ":undo<cr>",opts)
+
 -- Better window navigation
 keymap("n", "<C-Left>", "<C-w>h", opts)
 keymap("n", "<C-Down>", "<C-w>j", opts)
@@ -74,15 +83,13 @@ keymap("v", "p", '"_dP', opts)
 keymap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
--- Leader
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy())<cr>", opts)
-keymap("n", "<leader>r", "<cmd>lua require'telescope.builtin'.live_grep(require('telescope.themes').get_ivy())<cr>", opts)
-keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_project_files(require('telescope.themes').get_ivy())<cr>",opts)
-
+-- Leader --
+-- Telescope
+--keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy())<cr>", opts)
+--keymap("n", "<leader>r", "<cmd>lua require'telescope.builtin'.live_grep(require('telescope.themes').get_ivy())<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts)
+keymap("n", "<leader>r", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts)
+keymap("n", "<leader>gs", "<cmd>lua require'telescope.builtin'.git_status()<cr>",opts)
+keymap("n", "<leader>gc", "<cmd>lua require'telescope.builtin'.git_commits()<cr>",opts)
+keymap("n", "<leader>gb", "<cmd>lua require'telescope.builtin'.git_branches()<cr>",opts)
+keymap("n", "<leader>p", ":Telescope projects<CR>", opts)

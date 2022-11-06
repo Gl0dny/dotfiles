@@ -109,6 +109,8 @@ return packer.startup(function(use)
 
   -- Project
   use "ahmedkhalf/project.nvim"
+  use 'goolord/alpha-nvim'
+  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
   -- Indent Line 
   use "lukas-reineke/indent-blankline.nvim"
