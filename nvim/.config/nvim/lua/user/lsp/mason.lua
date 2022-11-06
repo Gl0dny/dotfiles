@@ -1,11 +1,20 @@
 local servers = {
 	"sumneko_lua",
-	-- "cssls",
+  "rust_analyzer",
+  "clangd",
+ -- "asm_lsp",
+  "cmake",
+  "bashls",
+--  "asm_lsp",
+  -- "cssls",
 	-- "html",
 	-- "tsserver",
 	"pyright",
-	-- "bashls",
 	"jsonls",
+  "vimls",
+  "texlab",
+  "svls",
+  "arduino_language_server"
 	-- "yamlls",
 }
 
