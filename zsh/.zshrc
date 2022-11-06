@@ -1,4 +1,4 @@
-neofetch
+#neofetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -84,7 +84,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aliases archlinux branch github zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-interactive-cd zsh-navigation-tools)
+plugins=(git aliases archlinux branch github zsh-autosuggestions zsh-syntax-highlighting zsh-interactive-cd zsh-navigation-tools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -136,11 +136,11 @@ alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
 alias probe='sudo -E hw-probe -all -upload'
 
 # Replace ls with exa
-alias ls='exa --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
-alias l='exa -lah --color=always --group-directories-first --icons' # tree listing
+alias ls='exa --color=always --group-directories-first' # preferred listing
+alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias l='exa -lah --color=always --group-directories-first' # tree listing
 
 #pacman unlock
 alias unlock='sudo rm /var/lib/pacman/db.lck'
@@ -194,7 +194,7 @@ alias jctl='journalctl -p 3 -xb'
 alias breload='cd ~ && source ~/.bashrc'
 alias zreload='cd ~ && source ~/.zshrc'
 alias pingme='ping -c64 github.com'
-alias cls='clear && neofetch'
+#alias cls='clear && neofetch'
 alias traceme='traceroute github.com'
 
 #hardware info --short
@@ -312,8 +312,8 @@ alias f="fzf"
 alias plang="tokei"
 
 #morefzf
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+# source /usr/share/fzf/completion.zsh
+# source /usr/share/fzf/key-bindings.zsh
 
 #package searching
 export CATPAC='cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")'
