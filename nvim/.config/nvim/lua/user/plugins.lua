@@ -110,6 +110,9 @@ return packer.startup(function(use)
   -- Project
   use "ahmedkhalf/project.nvim"
 
+  -- Indent Line 
+  use "lukas-reineke/indent-blankline.nvim"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
