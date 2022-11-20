@@ -207,6 +207,7 @@ alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+besta
 #GiT  command
 alias gc='git clone '
 alias gp='git pull'
+alias glog="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
 
 #Copy/Remove files/dirs
 alias rmd='rm -r'

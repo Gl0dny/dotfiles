@@ -1,0 +1,75 @@
+22:47:33 **** Incremental Build of configuration Debug for project LEDs ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "LEDs.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/gl0dny/Projects/stm32-training/course/03_GPIO/project/LEDs/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LEDs.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LEDs.elf
+ 
+arm-none-eabi-size   LEDs.elf 
+arm-none-eabi-objdump -h -S  LEDs.elf  > "LEDs.list"
+   text	   data	    bss	    dec	    hex	filename
+   6116	     20	   1572	   7708	   1e1c	LEDs.elf
+Finished building: default.size.stdout
+ 
+Finished building: LEDs.list
+ 
+22:48:37 **** Incremental Build of configuration Debug for project LEDs ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "LEDs.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/gl0dny/Projects/stm32-training/course/03_GPIO/project/LEDs/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LEDs.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LEDs.elf
+ 
+arm-none-eabi-size   LEDs.elf 
+arm-none-eabi-objdump -h -S  LEDs.elf  > "LEDs.list"
+   text	   data	    bss	    dec	    hex	filename
+   6128	     20	   1572	   7720	   1e28	LEDs.elf
+Finished building: default.size.stdout
+ 
+Finished building: LEDs.list
+ 
+22:50:37 **** Incremental Build of configuration Debug for project LEDs ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'led_set':
+../Core/Src/main.c:73:35: error: incompatible type for argument 1 of 'HAL_GPIO_WritePin'
+   73 |   HAL_GPIO_WritePin(LED1_GPIO_Port[led], LED_PIN[led], state);
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:262,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h:296:51: note: expected 'GPIO_TypeDef *' but argument is of type 'GPIO_TypeDef'
+  296 | void              HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                     ~~~~~~~~~~~~~~^~~~~
+At top level:
+../Core/Src/main.c:57:28: warning: 'LED_PORT' defined but not used [-Wunused-const-variable=]
+   57 | static GPIO_TypeDef* const LED_PORT[] = {
+      |                            ^~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:50:52 **** Incremental Build of configuration Debug for project LEDs ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "LEDs.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/gl0dny/Projects/stm32-training/course/03_GPIO/project/LEDs/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LEDs.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LEDs.elf
+ 
+arm-none-eabi-size   LEDs.elf 
+arm-none-eabi-objdump -h -S  LEDs.elf  > "LEDs.list"
+   text	   data	    bss	    dec	    hex	filename
+   6172	     20	   1572	   7764	   1e54	LEDs.elf
+Finished building: default.size.stdout
+ 
+Finished building: LEDs.list
+ 
+22:53:33 **** Incremental Build of configuration Debug for project LEDs ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "LEDs.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/gl0dny/Projects/stm32-training/course/03_GPIO/project/LEDs/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LEDs.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LEDs.elf
+ 
+arm-none-eabi-size   LEDs.elf 
+arm-none-eabi-objdump -h -S  LEDs.elf  > "LEDs.list"
+   text	   data	    bss	    dec	    hex	filename
+   6192	     20	   1572	   7784	   1e68	LEDs.elf
+Finished building: default.size.stdout
+ 
+Finished building: LEDs.list
+ 
