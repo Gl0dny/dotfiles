@@ -207,6 +207,7 @@ alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+besta
 #GiT  command
 alias gc='git clone '
 alias gp='git pull'
+alias glog='git log --pretty=format:"%h %d | %s %d [%an]" --graph --date=short'
 
 #Copy/Remove files/dirs
 alias rmd='rm -r'
@@ -329,7 +330,7 @@ alias c="clear"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #Editor
-export EDITOR='/usr/bin/neovide'
+export EDITOR='/usr/bin/nano'
 
 #Rust stuff
 . "$HOME/.cargo/env"

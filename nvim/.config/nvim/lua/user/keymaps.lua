@@ -27,7 +27,7 @@ keymap("", "<C-z>", ":undo<cr>", opts)
 
 -- Copy & Paste
 keymap("", "<C-S-v>", '"*p', opts)
-keymap("", "<C-S-c>", '"*y', opts)
+keymap("", "<C-S-c>", 'y', opts)
 
 -- Normal --
 -- Exiting nvim
