@@ -13,7 +13,7 @@ local servers = {
 	"jsonls",
   "vimls",
   "texlab",
-  "svls",
+  --[[ "svls", ]]
   "arduino_language_server"
 	-- "yamlls",
 }
