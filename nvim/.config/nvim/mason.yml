@@ -1,0 +1,3 @@
+- name: lspconfig
+  repo: 'neovim/nvim-lspconfig'
+  rev: 'master'
