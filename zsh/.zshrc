@@ -1,4 +1,4 @@
-neofetch
+#neofetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -313,8 +313,8 @@ alias f="fzf"
 alias plang="tokei"
 
 #morefzf
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+#source /usr/share/fzf/completion.zsh
+#source /usr/share/fzf/key-bindings.zsh
 
 #package searching
 export CATPAC='cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")'
@@ -337,3 +337,6 @@ export EDITOR='/usr/bin/nano'
 
 #export for pip3
 export PATH="/home/gl0dny/.local/bin:$PATH"
+
+#windows directory from wsl cli 
+alias e="explorer.exe"
