@@ -337,3 +337,5 @@ export EDITOR='/usr/bin/nano'
 
 #export for pip3
 export PATH="/home/gl0dny/.local/bin:$PATH"
+export VISUAL=nvim
+export EDITOR=$VISUAL
