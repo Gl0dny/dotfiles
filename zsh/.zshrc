@@ -337,6 +337,8 @@ export EDITOR='/usr/bin/neovide'
 
 #export for pip3
 export PATH="/home/gl0dny/.local/bin:$PATH"
+export VISUAL=nvim
+export EDITOR=$VISUAL
 
 #windows directory from wsl cli 
 alias e="explorer.exe"
