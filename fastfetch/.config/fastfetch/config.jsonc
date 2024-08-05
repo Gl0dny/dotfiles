@@ -16,46 +16,38 @@
             "type": "custom",
             "format": "┌──────────────────────────────────────────┐"
         },
-                {
-            "type": "command",
-            "key": "   Host",
-            "keyColor": "cyan",
-            "text": "cat /sys/class/dmi/id/product_name"
+        {
+            "type": "disk",
+            "key": "   Disk",
+            "keyColor": "cyan"
         },
         {
-            "type": "os",
-            "key": "   OS",
-            "keyColor": "red"
+            "type": "cpu",
+            "format": "{1}",
+            "key": "   CPU",
+            "keyColor": "cyan"
         },
         {
-            "type": "kernel",
-            "key": "   Kernel",
-            "keyColor": "red"
+            "type": "gpu",
+            "format": "{2}",
+            "key": "   GPU",
+            "keyColor": "cyan"
         },
         {
-            "type": "packages",
-            "key": "   Packages",
-            "keyColor": "green"
+            "type": "gpu",
+            "format": "{3}",
+            "key": "   GPU Driver",
+            "keyColor": "cyan"
         },
         {
-            "type": "display",
-            "key": "   Display",
-            "keyColor": "green"
-        },
+             "type": "memory",
+            "key": "  ﬙ Memory",
+            "keyColor": "cyan"
+        },      
         {
-            "type": "wm",
-            "key": "   WM",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "terminal",
-            "key": "   Terminal",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "shell",
-            "key": "   Shell",
-            "keyColor": "yellow"
+            "type": "uptime",
+            "key": "  󱫐 Uptime ",
+            "keyColor": "cyan"
         },
         {
             "type": "custom",
@@ -71,49 +63,53 @@
             "format": "┌──────────────────────────────────────────┐"
         },
         {
-            "type": "disk",
-            "key": "   Disk",
-            "keyColor": "blue"
+            "type": "command",
+            "key": "   Host",
+            "keyColor": "cyan",
+            "text": "cat /sys/class/dmi/id/product_name"
         },
-        {
-            "type": "cpu",
-            "format": "{1}",
-            "key": "   CPU",
-            "keyColor": "blue"
-        },
-        {
-            "type": "gpu",
-            "format": "{2}",
-            "key": "   GPU",
-            "keyColor": "blue"
-        },
-        {
-            "type": "gpu",
-            "format": "{3}",
-            "key": "   GPU Driver",
-            "keyColor": "magenta"
-        },
-        {
-             "type": "memory",
-            "key": "  ﬙ Memory",
-            "keyColor": "magenta"
-        },      
         {
             "type": "command",
             "key": "   Local IP (wlan0)",
-            "keyColor": "green",
+            "keyColor": "cyan",
             "text": "ip -o -4 addr show wlan0 | awk '{print $4}'"
         },
         {
-            "type": "uptime",
-            "key": "  󱫐 Uptime ",
-            "keyColor": "red"
+            "type": "os",
+            "key": "   OS",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "kernel",
+            "key": "   Kernel",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "packages",
+            "key": "   Packages",
+            "keyColor": "cyan"
+        },
+
+        {
+            "type": "wm",
+            "key": "   WM",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "terminal",
+            "key": "   Terminal",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "shell",
+            "key": "   Shell",
+            "keyColor": "cyan"
         },
         {
             "type": "custom",
             "format": "└──────────────────────────────────────────┘"
         },
-	{
+	    {
             "type": "colors",
             "paddingLeft": 2,
             "symbol": "circle"
