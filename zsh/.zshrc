@@ -350,8 +350,11 @@ alias mkdir='mkdir -p'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#Rust stuff
+# Rust stuff
 #2024# . "$HOME/.cargo/env" 
+
+# clipboard piping, example : echo "Hello" | clip
+alias clip='xclip -selection clipboard'
 
 #export for pip3
 export PATH="/home/gl0dny/.local/bin:$PATH"

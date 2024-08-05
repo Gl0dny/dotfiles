@@ -222,6 +222,9 @@ alias f="fzf"
 #tokei
 alias plang="tokei"
 
+# clipboard piping, example : echo "Hello" | clip
+alias clip='xclip -selection clipboard'
+
 #Editor
 export EDITOR='/usr/bin/nvim'
 

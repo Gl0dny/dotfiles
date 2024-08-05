@@ -1,9 +1,9 @@
 # dotfiles
 
+```
 pacman -S stow
 
-git clone dotfiles to ~ dir
+git clone dotfiles to ~
 
-ex. stow nvim/ 
-
-You just got symlink to your git repo
+stow <dir> - creates symlink based on provided layout
+```
