@@ -13,48 +13,6 @@
     },
     "modules": [
         {
-            "type": "custom",
-            "format": "┌──────────────────────────────────────────┐"
-        },
-        {
-            "type": "disk",
-            "key": "   Disk",
-            "keyColor": "cyan"
-        },
-        {
-            "type": "cpu",
-            "format": "{1}",
-            "key": "   CPU",
-            "keyColor": "cyan"
-        },
-        {
-            "type": "gpu",
-            "format": "{2}",
-            "key": "   GPU",
-            "keyColor": "cyan"
-        },
-        {
-            "type": "gpu",
-            "format": "{3}",
-            "key": "   GPU Driver",
-            "keyColor": "cyan"
-        },
-        {
-             "type": "memory",
-            "key": "  ﬙ Memory",
-            "keyColor": "cyan"
-        },      
-        {
-            "type": "uptime",
-            "key": "  󱫐 Uptime ",
-            "keyColor": "cyan"
-        },
-        {
-            "type": "custom",
-            "format": "└──────────────────────────────────────────┘"
-        },
-        "break",
-        {
             "type": "title",
             "key": "  "
         },
@@ -103,6 +61,50 @@
         {
             "type": "shell",
             "key": "   Shell",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────┘"
+        },
+        
+        "break",
+
+        {
+            "type": "custom",
+            "format": "┌──────────────────────────────────────────┐"
+        },
+        {
+            "type": "disk",
+            "key": "   Disk",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "cpu",
+            "format": "{1}",
+            "key": "   CPU",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "gpu",
+            "format": "{2}",
+            "key": "   GPU",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "gpu",
+            "format": "{3}",
+            "key": "   GPU Driver",
+            "keyColor": "cyan"
+        },
+        {
+             "type": "memory",
+            "key": "  ﬙ Memory",
+            "keyColor": "cyan"
+        },      
+        {
+            "type": "uptime",
+            "key": "  󱫐 Uptime ",
             "keyColor": "cyan"
         },
         {
