@@ -1,4 +1,4 @@
-neofetch
+fastfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -7,16 +7,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Path to your Snap installation.
 export PATH=$PATH:/snap/bin
-
-# Path to your Snap installation.
-export PATH="$HOME/.emacs.d/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -43,7 +40,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -56,6 +53,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
+unsetopt correct
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -84,7 +82,24 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aliases archlinux branch github zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-interactive-cd zsh-navigation-tools)
+plugins=(
+    git 
+    aliases 
+    alias-finder
+    archlinux 
+    branch 
+    docker-compose
+    emoji
+    github 
+    jump 
+    rust
+    zsh-autosuggestions 
+    zsh-syntax-highlighting 
+    zsh-completions 
+    zsh-interactive-cd 
+    zsh-navigation-tools
+    history history-substring-search
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,14 +108,20 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='nvim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -118,29 +139,24 @@ source $ZSH/oh-my-zsh.sh
 # Path to bat config
 export BAT_CONFIG_PATH="~/.config/bat/config.conf"
 
-##Snapper Stuff
-alias snapls='sudo snapper list'
-
 # Replace stuff with bat
 alias cat='bat '
-alias rg='batgrep '
-alias man='batman '
+
+#iso and version used to install XeroLinux
+alias iso="cat /etc/lsb-release"
 
 ##Cmatrix thing
-alias matrix='cmatrix -s -C cyan'
-
-#iso and version used to install ArcoLinux
-alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
+alias matrix='cmatrix -s -C cyan'y
 
 #systeminfo
 alias probe='sudo -E hw-probe -all -upload'
 
-# Replace ls with exa
-alias ls='exa --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
-alias l='exa -lah --color=always --group-directories-first --icons' # tree listing
+# Replace ls with eza
+alias ls='eza --color=always --group-directories-first' # preferred listing
+alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -a --tree --level=1' # tree listing
+alias l='eza -lah --color=always --group-directories-first' # all fules and dirs + additional info
 
 #pacman unlock
 alias unlock='sudo rm /var/lib/pacman/db.lck'
@@ -184,10 +200,6 @@ alias yayskip='yay -S --mflags --skipinteg'
 #grub update
 alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
-#our experimental - best option for the moment
-alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-
 #Bash aliases
 alias mkfile='touch'
 alias jctl='journalctl -p 3 -xb'
@@ -200,14 +212,19 @@ alias traceme='traceroute github.com'
 #hardware info --short
 alias hw='hwinfo --short'
 
-#youtube-dl
-alias yta-best="yt-dlp --extract-audio --audio-format best "
-alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "
-
 #GiT  command
 alias gc='git clone '
 alias gp='git pull'
 alias glog='git log --pretty=format:"%h %d | %s %d [%an]" --graph --date=short'
+
+gac() {
+  if [ "$#" -eq 0 ]; then
+    echo "Usage: gac \"commit message\""
+    return 1
+  fi
+  git add -A
+  git commit -m "$*"
+}
 
 #Copy/Remove files/dirs
 alias rmd='rm -r'
@@ -294,6 +311,7 @@ ex ()
 
 #neovim & neovide
 alias v='nvim'
+alias vi='nvim'
 alias vim='nvim'
 alias vide='neovide'
 
@@ -302,9 +320,6 @@ alias tokei="tokei -f"
 
 #procs
 alias ps="procs"
-
-#batgrep
-alias grep="batgrep"
 
 #fzf
 alias f="fzf"
@@ -320,22 +335,27 @@ source /usr/share/fzf/key-bindings.zsh
 export CATPAC='cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")'
 alias findpac='pacman -Slq | fzf -m --preview $CATPAC | xargs -ro sudo pacman -S'
 
+export CATPAC='cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")'
+alias findparu='paru -Slq | fzf -m --preview $CATPAC | xargs -ro sudo paru -S'
+
 export CATYAY='cat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}")' 
 alias findyay='yay -Slq | fzf -m --preview $CATYAY | xargs -ro  yay -S'
 
 #clear
 alias c="clear"
 
+# Always mkdir a path (this doesn't inhibit functionality to make a single dir)
+alias mkdir='mkdir -p'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#Editor
-export EDITOR='/usr/bin/nano'
-
 #Rust stuff
-. "$HOME/.cargo/env"
+#2024# . "$HOME/.cargo/env" 
 
 #export for pip3
 export PATH="/home/gl0dny/.local/bin:$PATH"
-export VISUAL=nvim
-export EDITOR=$VISUAL
+
+#Editor
+export EDITOR='/usr/bin/nvim'
+

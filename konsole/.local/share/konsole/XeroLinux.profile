@@ -5,7 +5,7 @@ ColorScheme=AplumaDark
 CursorShape=1
 
 [General]
-Command=/bin/bash
+Command=/bin/zsh
 Name=XeroLinux
 Parent=FALLBACK/
 StartInCurrentSessionDir=true

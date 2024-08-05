@@ -35,8 +35,6 @@ alias snapls='sudo snapper list'
 
 # Replace stuff with bat
 alias cat='bat '
-alias rg='batgrep '
-alias man='batman '
 
 ##Cmatrix thing
 alias matrix='cmatrix -s -C cyan'
@@ -50,12 +48,12 @@ bind 'set completion-ignore-case on'
 #systeminfo
 alias probe='sudo -E hw-probe -all -upload'
 
-# Replace ls with exa
-alias ls='exa --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
-alias l='exa -lah --color=always --group-directories-first --icons' # tree listing
+# Replace ls with eza
+alias ls='eza --color=always --group-directories-first' # preferred listing
+alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -a --tree --level=1' # tree listing
+alias l='eza -lah --color=always --group-directories-first' # all fules and dirs + additional info
 
 #pacman unlock
 alias unlock='sudo rm /var/lib/pacman/db.lck'
@@ -204,10 +202,11 @@ ex ()
   fi
 }
 
-neofetch
+fastfetch
 
 #neovim & neovide
 alias v='nvim'
+alias vi='nvim'
 alias vim='nvim'
 alias vide='neovide'
 
@@ -217,19 +216,14 @@ alias tokei="tokei -f"
 #procs
 alias ps="procs"
 
-#batgrep
-alias grep="batgrep"
-
 #fzf
 alias f="fzf"
 
 #tokei
 alias plang="tokei"
 
-. "$HOME/.cargo/env"
-
 #Editor
-export EDITOR='/usr/bin/neovide'
+export EDITOR='/usr/bin/nvim'
 
 #export for pip3
 export PATH="/home/gl0dny/.local/bin:$PATH"
