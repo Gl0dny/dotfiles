@@ -42,8 +42,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ```
 
 `zsh-completions` - The zsh-completions plugin for Zsh provides additional command-line completions that are not included by default in Zsh or Oh My Zsh.
+```
 git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
-
+```
 
 ## Packages :
 
@@ -78,4 +79,5 @@ zsh-completions \
 fastfetch
 man-db
 bat-extras
+xclip
 ```
