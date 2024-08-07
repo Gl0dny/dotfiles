@@ -1,4 +1,9 @@
-fastfetch
+if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+    fastfetch
+fi
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -141,6 +146,20 @@ export BAT_CONFIG_PATH="~/.config/bat/config.conf"
 
 # Replace stuff with bat
 alias cat='bat '
+alias man='batman '
+alias grep='batgrep '
+alias diff='batdiff '
+
+# To use batpipe, eval the output of this command in your shell init script.
+LESSOPEN="|/usr/bin/batpipe %s";
+export LESSOPEN;
+unset LESSCLOSE;
+
+# The following will enable colors when using batpipe with less:
+LESS="$LESS -R";
+BATPIPE="color";
+export LESS;
+export BATPIPE;
 
 #iso and version used to install XeroLinux
 alias iso="cat /etc/lsb-release"
@@ -355,6 +374,9 @@ alias mkdir='mkdir -p'
 
 # clipboard piping, example : echo "Hello" | clip
 alias clip='xclip -selection clipboard'
+
+# dolphin
+alias dol='dolphin .'
 
 #export for pip3
 export PATH="/home/gl0dny/.local/bin:$PATH"

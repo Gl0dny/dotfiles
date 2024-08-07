@@ -40,3 +40,44 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
+
+`zsh-completions` - The zsh-completions plugin for Zsh provides additional command-line completions that are not included by default in Zsh or Oh My Zsh.
+```
+git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+```
+
+## Packages :
+
+```
+paru -S --needed \
+zsh \
+git \
+neovim \
+bat \
+cmatrix \
+hw-probe \
+eza \
+topgrade \
+expac \
+paru \
+yay \
+fzf \
+xclip \
+dolphin \
+tokei \
+procs \
+xorg-xrandr \
+unzip \
+p7zip \
+bzip2 \
+gzip \
+oh-my-zsh-git \
+zsh-theme-powerlevel10k \
+zsh-autosuggestions \
+zsh-syntax-highlighting \
+zsh-completions \
+fastfetch
+man-db
+bat-extras
+xclip
+```

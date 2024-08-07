@@ -35,6 +35,9 @@ alias snapls='sudo snapper list'
 
 # Replace stuff with bat
 alias cat='bat '
+alias man='batman '
+alias grep='batgrep '
+alias diff='batdiff '
 
 ##Cmatrix thing
 alias matrix='cmatrix -s -C cyan'
@@ -230,3 +233,6 @@ export EDITOR='/usr/bin/nvim'
 
 #export for pip3
 export PATH="/home/gl0dny/.local/bin:$PATH"
+
+# dolphin
+alias dol='dolphin .'
