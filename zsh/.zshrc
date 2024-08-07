@@ -1,4 +1,6 @@
-fastfetch
+if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+    fastfetch
+fi
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
