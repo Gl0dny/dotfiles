@@ -205,8 +205,6 @@ ex ()
   fi
 }
 
-fastfetch
-
 #neovim & neovide
 alias v='nvim'
 alias vi='nvim'
