@@ -1,5 +1,13 @@
-if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+# Run fastfetch unless inside VS Code or VSCodium
+if [[ "$TERM_PROGRAM" != "vscode" && "$TERM_PROGRAM" != "vscode-insiders" && "$TERM_PROGRAM" != "Codium" ]]; then
     fastfetch
+fi
+
+# Alias to use 'codium' if available, otherwise 'code'
+if command -v codium &> /dev/null; then
+    alias code='codium'
+else
+    alias code='code'
 fi
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
