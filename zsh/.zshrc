@@ -355,8 +355,8 @@ alias f="fzf"
 alias plang="tokei"
 
 #morefzf
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 #package searching
 export CATPAC='cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")'
@@ -378,7 +378,7 @@ alias mkdir='mkdir -p'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Rust stuff
-#2024# . "$HOME/.cargo/env" 
+. "$HOME/.cargo/env" 
 
 # clipboard piping, example : echo "Hello" | clip
 alias clip='xclip -selection clipboard'
