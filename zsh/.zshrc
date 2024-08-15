@@ -245,6 +245,7 @@ alias gp='git pull'
 alias glog='git log --pretty=format:"%h %d | %s %d [%an]" --graph --date=short'
 alias gs='git status'
 alias gd='git diff'
+alias gclear='git clean -fdx'
 
 gac() {
   if [ "$#" -eq 0 ]; then
