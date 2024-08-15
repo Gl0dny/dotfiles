@@ -243,6 +243,8 @@ alias hw='hwinfo --short'
 alias gc='git clone '
 alias gp='git pull'
 alias glog='git log --pretty=format:"%h %d | %s %d [%an]" --graph --date=short'
+alias gs='git status'
+alias gd='git diff'
 
 gac() {
   if [ "$#" -eq 0 ]; then
@@ -386,9 +388,12 @@ alias clip='xclip -selection clipboard'
 # dolphin
 alias dol='dolphin .'
 
-#export for pip3
+# export for pip3
 export PATH="/home/gl0dny/.local/bin:$PATH"
 
-#Editor
+# Editor
 export EDITOR='/usr/bin/nvim'
+
+# shared partition
+alias shared='cd /run/media/gl0dny/shared-ntfs'
 
