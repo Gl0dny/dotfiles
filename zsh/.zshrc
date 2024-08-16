@@ -202,14 +202,14 @@ alias userlist='cut -d: -f1 /etc/passwd'
 
 #Pacman for software managment
 alias upall='topgrade'
-alias search='sudo pacman -Qs'
-alias remove='sudo pacman -R'
-alias install='sudo pacman -S'
-alias linstall='sudo pacman -U '
-alias update='sudo pacman -Syyu'
-alias clrcache='sudo pacman -Scc'
-alias orphans='sudo pacman -Rns $(pacman -Qtdq)'
-alias akring='sudo pacman -Sy archlinux-keyring --noconfirm'
+alias search='sudo paru -Qs'
+alias remove='sudo paru -R'
+alias install='sudo paru -S'
+alias linstall='sudo paru -U '
+alias update='sudo paru -Syyu'
+alias clrcache='sudo paru -Scc'
+alias orphans='sudo paru -Rns $(paru -Qtdq)'
+alias akring='sudo paru -Sy archlinux-keyring --noconfirm'
 
 # Paru/Yay stuff
 alias pget='paru -S '
@@ -398,3 +398,5 @@ export EDITOR='/usr/bin/nvim'
 # shared partition
 alias shared='cd /run/media/gl0dny/shared-ntfs'
 
+# Okular pdf
+alias pdf='okular'

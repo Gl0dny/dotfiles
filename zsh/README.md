@@ -79,5 +79,6 @@ zsh-completions \
 fastfetch \
 man-db \
 bat-extras \
-xclip
+xclip \
+okular
 ```
