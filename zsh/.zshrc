@@ -289,6 +289,14 @@ alias dldz='cd ~/Downloads'
 alias docs='cd ~/Documents'
 alias sapps='cd /usr/share/applications'
 alias lapps='cd ~/.local/share/applications'
+# shared partition
+alias shared='cd /run/media/gl0dny/shared-ntfs'
+# workspace
+alias work='cd ~/workspace'
+# dotfiles
+alias dotfiles='cd ~/dotfiles'
+# edit zshrc
+alias czsh='code ~/.zshrc'
 
 #receive the key of a developer
 alias gpg-retrieve='gpg2 --keyserver-options auto-key-retrieve --receive-keys'
@@ -394,9 +402,6 @@ export PATH="/home/gl0dny/.local/bin:$PATH"
 
 # Editor
 export EDITOR='/usr/bin/nvim'
-
-# shared partition
-alias shared='cd /run/media/gl0dny/shared-ntfs'
 
 # Okular pdf
 alias pdf='okular'
