@@ -202,14 +202,14 @@ alias userlist='cut -d: -f1 /etc/passwd'
 
 #Pacman for software managment
 alias upall='topgrade'
-alias search='sudo pacman -Qs'
-alias remove='sudo pacman -R'
-alias install='sudo pacman -S'
-alias linstall='sudo pacman -U '
-alias update='sudo pacman -Syyu'
-alias clrcache='sudo pacman -Scc'
-alias orphans='sudo pacman -Rns $(pacman -Qtdq)'
-alias akring='sudo pacman -Sy archlinux-keyring --noconfirm'
+alias search='sudo paru -Qs'
+alias remove='sudo paru -R'
+alias install='sudo paru -S'
+alias linstall='sudo paru -U '
+alias update='sudo paru -Syyu'
+alias clrcache='sudo paru -Scc'
+alias orphans='sudo paru -Rns $(paru -Qtdq)'
+alias akring='sudo paru -Sy archlinux-keyring --noconfirm'
 
 # Paru/Yay stuff
 alias pget='paru -S '
@@ -243,6 +243,9 @@ alias hw='hwinfo --short'
 alias gc='git clone '
 alias gp='git pull'
 alias glog='git log --pretty=format:"%h %d | %s %d [%an]" --graph --date=short'
+alias gs='git status'
+alias gd='git diff'
+alias gclear='git clean -fdx'
 
 gac() {
   if [ "$#" -eq 0 ]; then
@@ -286,6 +289,14 @@ alias dldz='cd ~/Downloads'
 alias docs='cd ~/Documents'
 alias sapps='cd /usr/share/applications'
 alias lapps='cd ~/.local/share/applications'
+# shared partition
+alias shared='cd /run/media/gl0dny/shared-ntfs'
+# workspace
+alias work='cd ~/workspace'
+# dotfiles
+alias dotfiles='cd ~/dotfiles'
+# edit zshrc
+alias czsh='code ~/.zshrc'
 
 #receive the key of a developer
 alias gpg-retrieve='gpg2 --keyserver-options auto-key-retrieve --receive-keys'
@@ -386,9 +397,11 @@ alias clip='xclip -selection clipboard'
 # dolphin
 alias dol='dolphin .'
 
-#export for pip3
+# export for pip3
 export PATH="/home/gl0dny/.local/bin:$PATH"
 
-#Editor
+# Editor
 export EDITOR='/usr/bin/nvim'
 
+# Okular pdf
+alias pdf='okular'
