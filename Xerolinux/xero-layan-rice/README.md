@@ -1,9 +1,5 @@
 # This is XeroLinux's Layan Rice
 
-### Disclaimer
-
-I would like to clarify one very important aspect of ricing. We use custom themes, and those might not get updated very often, if at all by their respective developers/artists, which might result in some parts of the system and apps not to get themed correctly. That, my friends, is unfortunately out of our hands.
-
 ![XeroLayan](https://i.imgur.com/VA2tycb.jpeg)
 
 ### Performance :
@@ -21,7 +17,7 @@ cd xero-layan-git/ && ./install.sh
 
 ### Your Settings
 
-The install script will backup some app settings & all system ones before applying and overriding them with new ones, you will be able to restore what you need from the backup, so please do not report that. You have been warned. In case of any issues please find us on our [Discord](https://discord.gg/5sqxTSuKZu). Best of luck !
+The install script will backup some app settings & all system ones before applying and overriding them with new ones, you will be able to restore what you need from the backup.
 
 ## Script will do the following steps :
 
