@@ -290,7 +290,7 @@ alias docs='cd ~/Documents'
 alias sapps='cd /usr/share/applications'
 alias lapps='cd ~/.local/share/applications'
 # shared partition
-alias shared='cd /run/media/gl0dny/shared-ntfs'
+alias shared='cd /run/media/gl0dny/shared'
 # workspace
 alias work='cd ~/workspace'
 # dotfiles
