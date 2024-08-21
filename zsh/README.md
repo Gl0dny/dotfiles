@@ -76,8 +76,9 @@ zsh-theme-powerlevel10k \
 zsh-autosuggestions \
 zsh-syntax-highlighting \
 zsh-completions \
-fastfetch
-man-db
-bat-extras
-xclip
+fastfetch \
+man-db \
+bat-extras \
+xclip \
+okular
 ```
