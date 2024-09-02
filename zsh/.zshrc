@@ -405,3 +405,6 @@ export EDITOR='/usr/bin/nvim'
 
 # Okular pdf
 alias pdf='okular'
+
+# restart Network Manager
+alias wifi='sudo systemctl restart NetworkManager'
