@@ -408,3 +408,6 @@ alias pdf='okular'
 
 # restart Network Manager
 alias wifi='sudo systemctl restart NetworkManager'
+
+# VNC viewer
+alias vnc='vncviewer'
