@@ -64,5 +64,7 @@ bzip2 \
 gzip \
 fastfetch \
 tokei \
-procs
+procs \
+bat-extras \
+rg
 ```

@@ -1,7 +1,7 @@
 # Run fastfetch unless inside VS Code or VSCodium
-if [[ "$TERM_PROGRAM" != "vscode" && "$TERM_PROGRAM" != "vscode-insiders" && "$TERM_PROGRAM" != "Codium" ]]; then
-    fastfetch
-fi
+# if [[ "$TERM_PROGRAM" != "vscode" && "$TERM_PROGRAM" != "vscode-insiders" && "$TERM_PROGRAM" != "Codium" ]]; then
+#     fastfetch
+# fi
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
