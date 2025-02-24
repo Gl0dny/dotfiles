@@ -49,36 +49,20 @@ git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-m
 ## Packages :
 
 ```
-paru -S --needed \
+brew install --formula \
 zsh \
 git \
 neovim \
 bat \
 cmatrix \
-hw-probe \
 eza \
 topgrade \
-expac \
-paru \
-yay \
 fzf \
-xclip \
-dolphin \
-tokei \
-procs \
-xorg-xrandr \
 unzip \
 p7zip \
 bzip2 \
 gzip \
-oh-my-zsh-git \
-zsh-theme-powerlevel10k \
-zsh-autosuggestions \
-zsh-syntax-highlighting \
-zsh-completions \
 fastfetch \
-man-db \
-bat-extras \
-xclip \
-okular
+tokei \
+procs
 ```

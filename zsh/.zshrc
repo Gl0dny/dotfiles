@@ -3,13 +3,6 @@ if [[ "$TERM_PROGRAM" != "vscode" && "$TERM_PROGRAM" != "vscode-insiders" && "$T
     fastfetch
 fi
 
-# Alias to use 'codium' if available, otherwise 'code'
-if command -v codium &> /dev/null; then
-    alias code='codium'
-else
-    alias code='code'
-fi
-
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -25,20 +18,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Path to your Snap installation.
-export PATH=$PATH:/snap/bin
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -99,7 +83,7 @@ plugins=(
     git 
     aliases 
     alias-finder
-    archlinux 
+    macos 
     branch 
     docker-compose
     emoji
@@ -110,15 +94,12 @@ plugins=(
     zsh-syntax-highlighting 
     zsh-completions 
     zsh-interactive-cd 
-    zsh-navigation-tools
     history history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -136,9 +117,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -147,7 +125,6 @@ setopt appendhistory
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # Path to bat config
 export BAT_CONFIG_PATH="~/.config/bat/config.conf"
@@ -159,7 +136,7 @@ alias grep='batgrep '
 alias diff='batdiff '
 
 # To use batpipe, eval the output of this command in your shell init script.
-LESSOPEN="|/usr/bin/batpipe %s";
+LESSOPEN="|$(brew --prefix)/bin/batpipe %s";
 export LESSOPEN;
 unset LESSCLOSE;
 
@@ -169,24 +146,15 @@ BATPIPE="color";
 export LESS;
 export BATPIPE;
 
-#iso and version used to install XeroLinux
-alias iso="cat /etc/lsb-release"
-
 ##Cmatrix thing
-alias matrix='cmatrix -s -C cyan'y
-
-#systeminfo
-alias probe='sudo -E hw-probe -all -upload'
+alias matrix='cmatrix -s -C cyan'
 
 # Replace ls with eza
 alias ls='eza --color=always --group-directories-first' # preferred listing
 alias la='eza -a --color=always --group-directories-first'  # all files and dirs
 alias ll='eza -l --color=always --group-directories-first'  # long format
 alias lt='eza -a --tree --level=1' # tree listing
-alias l='eza -lah --color=always --group-directories-first' # all fules and dirs + additional info
-
-#pacman unlock
-alias unlock='sudo rm /var/lib/pacman/db.lck'
+alias l='eza -lah --color=always --group-directories-first' # all files and dirs + additional info
 
 #available free memory
 alias free='free -mt'
@@ -197,47 +165,12 @@ alias wget='wget -c'
 #readable output
 alias df='df -h'
 
-#userlist
-alias userlist='cut -d: -f1 /etc/passwd'
-
-#Pacman for software managment
-alias upall='topgrade'
-alias search='sudo paru -Qs'
-alias remove='sudo paru -R'
-alias install='sudo paru -S'
-alias linstall='sudo paru -U '
-alias update='sudo paru -Syyu'
-alias clrcache='sudo paru -Scc'
-alias orphans='sudo paru -Rns $(paru -Qtdq)'
-alias akring='sudo paru -Sy archlinux-keyring --noconfirm'
-
-# Paru/Yay stuff
-alias pget='paru -S '
-alias yget='yay -S '
-alias yrem='yay -R '
-alias prem='paru -R '
-
-#Flatpak Update
-alias fpup='flatpak update'
-
-#skip integrity check
-alias paruskip='paru -S --mflags --skipinteg'
-alias yayskip='yay -S --mflags --skipinteg'
-
-#grub update
-alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-
-#Bash aliases
-alias mkfile='touch'
-alias jctl='journalctl -p 3 -xb'
-alias breload='cd ~ && source ~/.bashrc'
-alias zreload='cd ~ && source ~/.zshrc'
-alias pingme='ping -c64 github.com'
-alias cls='clear && neofetch'
-alias traceme='traceroute github.com'
-
-#hardware info --short
-alias hw='hwinfo --short'
+#Brew for software management
+alias search='brew search'
+alias remove='brew uninstall'
+alias install='brew install'
+alias update='brew update && brew upgrade'
+alias clrcache='brew cleanup'
 
 #GiT  command
 alias gc='git clone '
@@ -298,24 +231,6 @@ alias dotfiles='cd ~/dotfiles'
 # edit zshrc
 alias czsh='code ~/.zshrc'
 
-#receive the key of a developer
-alias gpg-retrieve='gpg2 --keyserver-options auto-key-retrieve --receive-keys'
-
-#switch between lightdm and sddm
-alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
-alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
-
-#Recent Installed Packages
-alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
-
-#Package Info
-alias info='sudo pacman -Si '
-alias infox='sudo pacman -Sii '
-
-##Refresh Keys
-alias rkeys='sudo pacman-key --refresh-keys'
-
 #shutdown or reboot
 alias sr='sudo reboot'
 alias ssn='sudo shutdown now'
@@ -365,20 +280,6 @@ alias f="fzf"
 #tokei
 alias plang="tokei"
 
-#morefzf
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
-
-#package searching
-export CATPAC='cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")'
-alias findpac='pacman -Slq | fzf -m --preview $CATPAC | xargs -ro sudo pacman -S'
-
-export CATPAC='cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")'
-alias findparu='paru -Slq | fzf -m --preview $CATPAC | xargs -ro sudo paru -S'
-
-export CATYAY='cat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}")' 
-alias findyay='yay -Slq | fzf -m --preview $CATYAY | xargs -ro  yay -S'
-
 #clear
 alias c="clear"
 
@@ -392,30 +293,21 @@ alias mkdir='mkdir -p'
 #2024# . "$HOME/.cargo/env" 
 
 # clipboard piping, example : echo "Hello" | clip
-alias clip='xclip -selection clipboard'
+alias clip='pbcopy'
 
-# dolphin
-alias dol='dolphin .'
-
-# export for pip3
-export PATH="/home/gl0dny/.local/bin:$PATH"
+# macOS Finder
+alias finder='open .'
 
 # Editor
-export EDITOR='/usr/bin/nvim'
+export EDITOR='nvim'
 
-# Okular pdf
-alias pdf='okular'
-
-# restart Network Manager
-alias wifi='sudo systemctl restart NetworkManager'
+# Preview pdf
+alias pdf='open -a Preview'
 
 # VNC viewer
-alias vnc='vncviewer'
+alias vnc='open -a VNC\ Viewer'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# zoxide
-eval "$(zoxide init zsh)"
-alias cd='z'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
