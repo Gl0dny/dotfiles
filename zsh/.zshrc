@@ -95,6 +95,8 @@ plugins=(
     zsh-completions 
     zsh-interactive-cd 
     history history-substring-search
+    web-search
+    sudo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -307,7 +309,30 @@ alias pdf='open -a Preview'
 # VNC viewer
 alias vnc='open -a VNC\ Viewer'
 
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+function latex-compile() {
+  if [ -z "$1" ]; then
+    echo "Error: Please provide a .tex filename"
+    return 1
+  fi
+  filename="${1%.tex}"
+  if [ ! -f "$filename.tex" ]; then
+    echo "Error: File $filename.tex does not exist"
+    return 1
+  fi
+  echo "Compiling $filename.tex..."
+  latexmk -xelatex -bibtex "$filename.tex" && open "$filename.pdf"
+}
