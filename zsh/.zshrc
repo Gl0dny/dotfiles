@@ -419,3 +419,5 @@ export NVM_DIR="$HOME/.nvm"
 # zoxide
 eval "$(zoxide init zsh)"
 alias cd='z'
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
