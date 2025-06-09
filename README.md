@@ -1,7 +1,7 @@
 # dotfiles
 
 ```
-pacman -S stow
+brew install -S stow
 
 git clone dotfiles to ~
 
