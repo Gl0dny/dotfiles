@@ -1,7 +1,7 @@
 # dotfiles
 
 ```
-pacman -S stow
+sudo apt install stow
 
 git clone dotfiles to ~
 

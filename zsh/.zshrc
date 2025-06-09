@@ -153,7 +153,7 @@ setopt appendhistory
 export BAT_CONFIG_PATH="~/.config/bat/config.conf"
 
 # Replace stuff with bat
-alias cat='bat '
+alias cat='batcat '
 alias man='batman '
 alias grep='batgrep '
 alias diff='batdiff '
@@ -366,8 +366,8 @@ alias f="fzf"
 alias plang="tokei"
 
 #morefzf
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 
 #package searching
 export CATPAC='cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")'
