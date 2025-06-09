@@ -1,7 +1,7 @@
 ## zsh
 
 ```
- pacman -S zsh
+ brew install zsh
 ```
 
 ## Oh My Zsh
