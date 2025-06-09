@@ -1,7 +1,7 @@
 # dotfiles
 
 ```
-brew install -S stow
+brew install stow
 
 git clone dotfiles to ~
 
