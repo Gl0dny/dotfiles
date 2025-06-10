@@ -1,8 +1,3 @@
-# Run fastfetch unless inside VS Code or VSCodium
-if [[ "$TERM_PROGRAM" != "vscode" && "$TERM_PROGRAM" != "vscode-insiders" && "$TERM_PROGRAM" != "Codium" ]]; then
-    fastfetch
-fi
-
 # Alias to use 'codium' if available, otherwise 'code'
 if command -v codium &> /dev/null; then
     alias code='codium'
@@ -421,3 +416,5 @@ eval "$(zoxide init zsh)"
 alias cd='z'
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:/home/hexapod/.local/bin"
+alias activate='source ~/workspace/bin/activate'
