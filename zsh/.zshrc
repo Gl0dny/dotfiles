@@ -418,3 +418,12 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/home/hexapod/.local/bin"
 alias activate='source ~/workspace/bin/activate'
+
+#pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+#zsh history corruption prevention
+setopt inc_append_history
+setopt share_history
